@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(claude plugin *)",
+      "Bash(xargs cat *)",
+      "WebFetch(domain:api.anthropic.com)",
+      "Bash(cd /tmp)",
+      "Bash(cp \"/c/Users/Alba/.claude/projects/C--Users-Alba-Downloads-FitTracker/a6f55e96-0135-46fa-ad53-8d9aad7bf57b/tool-results/webfetch-1776878720406-5ihx9y.bin\" design.bin.gz)",
+      "Bash(gunzip design.bin.gz)",
+      "Bash(mkdir design_extracted)",
+      "Bash(tar -xf design.bin -C design_extracted)"
+    ]
+  }
+}
