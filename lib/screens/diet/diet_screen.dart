@@ -214,7 +214,7 @@ class _MealCard extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(
                       horizontal: 10, vertical: 4),
                   decoration: BoxDecoration(
-                    color: AppTheme.accentColor.withOpacity(0.1),
+                    color: AppTheme.accentColor.withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child: Text(typeName,
@@ -322,7 +322,7 @@ class _MacroBar extends StatelessWidget {
           child: LinearProgressIndicator(
             value: pct,
             minHeight: 7,
-            backgroundColor: color.withOpacity(0.12),
+            backgroundColor: color.withValues(alpha: 0.12),
             valueColor: AlwaysStoppedAnimation(color),
           ),
         ),
