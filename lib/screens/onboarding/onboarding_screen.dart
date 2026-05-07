@@ -211,7 +211,7 @@ class _BodyPage extends StatelessWidget {
               prefixIcon: Icon(Icons.monitor_weight_outlined), suffixText: 'kg')),
       const SizedBox(height: 12),
       Container(padding: const EdgeInsets.all(12),
-        decoration: BoxDecoration(color: Colors.blue.withOpacity(0.08), borderRadius: BorderRadius.circular(12)),
+        decoration: BoxDecoration(color: Colors.blue.withValues(alpha: 0.08), borderRadius: BorderRadius.circular(12)),
         child: Row(children: [
           const Icon(Icons.info_outline_rounded, color: Colors.blue, size: 18),
           const SizedBox(width: 8),
@@ -289,7 +289,7 @@ class _GoalCard extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: 10),
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: selected ? AppTheme.primaryColor.withOpacity(0.08) : Colors.grey.shade50,
+        color: selected ? AppTheme.primaryColor.withValues(alpha: 0.08) : Colors.grey.shade50,
         borderRadius: BorderRadius.circular(16),
         border: Border.all(color: selected ? AppTheme.primaryColor : Colors.grey.shade200,
             width: selected ? 2 : 1)),
