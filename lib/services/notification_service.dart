@@ -169,11 +169,12 @@ class NotificationService {
         await scheduleWeekly(id: id, title: title, body: body,
             weekday: day, hour: hour, minute: minute);
       case 'custom':
-        if (customDays != null)
+        if (customDays != null) {
           for (int i = 0; i < customDays.length; i++) {
             await scheduleWeekly(id: id + i, title: title, body: body,
                 weekday: customDays[i], hour: hour, minute: minute);
           }
+        }
       default:
         await scheduleDaily(id: id, title: title, body: body, hour: hour, minute: minute);
     }
