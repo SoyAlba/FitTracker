@@ -103,9 +103,9 @@ class _PhotosTabState extends State<_PhotosTab> {
                   margin: const EdgeInsets.all(16),
                   padding: const EdgeInsets.all(12),
                   decoration: BoxDecoration(
-                    color: AppTheme.primaryColor.withOpacity(0.05),
+                    color: AppTheme.primaryColor.withValues(alpha: 0.05),
                     borderRadius: BorderRadius.circular(16),
-                    border: Border.all(color: AppTheme.primaryColor.withOpacity(0.2)),
+                    border: Border.all(color: AppTheme.primaryColor.withValues(alpha: 0.2)),
                   ),
                   child: Column(children: [
                     Text(_compareA == null && _compareB == null
@@ -146,7 +146,7 @@ class _PhotosTabState extends State<_PhotosTab> {
                             if (isSelectedA) { _compareA = null; }
                             else if (isSelectedB) { _compareB = null; }
                             else if (_compareA == null) { _compareA = photo; }
-                            else _compareB ??= photo;
+                            else { _compareB ??= photo; }
                           });
                         } else {
                           _showPhotoDetail(context, photo, provider);
@@ -167,7 +167,7 @@ class _PhotosTabState extends State<_PhotosTab> {
                               borderRadius: const BorderRadius.vertical(bottom: Radius.circular(14)),
                               gradient: LinearGradient(
                                   begin: Alignment.bottomCenter, end: Alignment.topCenter,
-                                  colors: [Colors.black.withOpacity(0.7), Colors.transparent])),
+                                  colors: [Colors.black.withValues(alpha: 0.7), Colors.transparent])),
                             child: Text(
                               '${photo.date.day}/${photo.date.month}/${photo.date.year}',
                               style: const TextStyle(color: Colors.white, fontSize: 12,
@@ -180,7 +180,7 @@ class _PhotosTabState extends State<_PhotosTab> {
                               duration: const Duration(milliseconds: 150),
                               width: 32, height: 32,
                               decoration: BoxDecoration(
-                                color: isSelectedA ? Colors.blue : isSelectedB ? Colors.green : Colors.white.withOpacity(0.8),
+                                color: isSelectedA ? Colors.blue : isSelectedB ? Colors.green : Colors.white.withValues(alpha: 0.8),
                                 shape: BoxShape.circle,
                                 border: Border.all(color: Colors.white, width: 2)),
                               child: Center(child: Text(
@@ -348,7 +348,7 @@ class _MeasBadge extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Container(
     padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-    decoration: BoxDecoration(color: color.withOpacity(0.1), borderRadius: BorderRadius.circular(20)),
+    decoration: BoxDecoration(color: color.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(20)),
     child: Text('$label: ${value.toStringAsFixed(1)} cm',
         style: TextStyle(color: color, fontSize: 12, fontWeight: FontWeight.w600)),
   );
