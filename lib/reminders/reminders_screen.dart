@@ -382,6 +382,7 @@ class _ReminderEditorSheetState extends State<_ReminderEditorSheet> {
     } else {
       widget.provider.updateMedicalReminder(reminder);
     }
+    if (!mounted) return;
     Navigator.pop(context);
   }
 
