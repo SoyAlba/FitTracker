@@ -65,10 +65,9 @@ class _RemindersScreenState extends State<RemindersScreen> with WidgetsBindingOb
             tooltip: 'Notificación de prueba',
             onPressed: () async {
               await NotificationService.instance.sendTestNotification();
-              if (mounted) {
-                ScaffoldMessenger.of(context).showSnackBar(
+              if (!context.mounted) return;
+              ScaffoldMessenger.of(context).showSnackBar(
                 const SnackBar(content: Text('🔔 ¿Ha llegado la notificación?')));
-              }
             },
           ),
         ],
@@ -486,6 +485,7 @@ class _ReminderEditorSheetState extends State<_ReminderEditorSheet> {
     } else {
       widget.provider.updateMedicalReminder(reminder);
     }
+    if (!mounted) return;
     Navigator.pop(context);
   }
 
