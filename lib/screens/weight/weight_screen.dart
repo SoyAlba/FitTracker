@@ -194,7 +194,7 @@ class _WeightEntryCard extends StatelessWidget {
             else
               CircleAvatar(
                 radius: 28,
-                backgroundColor: AppTheme.primaryColor.withOpacity(0.1),
+                backgroundColor: AppTheme.primaryColor.withValues(alpha: 0.1),
                 child: Text(entry.weight.toStringAsFixed(0),
                     style: const TextStyle(color: AppTheme.primaryColor,
                         fontWeight: FontWeight.bold, fontSize: 13)),
@@ -280,7 +280,7 @@ class _WeightEntryCard extends StatelessWidget {
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
               decoration: BoxDecoration(
-                color: diffKg <= 0 ? Colors.green.withOpacity(0.2) : Colors.orange.withOpacity(0.2),
+                color: diffKg <= 0 ? Colors.green.withValues(alpha: 0.2) : Colors.orange.withValues(alpha: 0.2),
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Text(
@@ -324,7 +324,7 @@ class _ComparePhotoPanel extends StatelessWidget {
       Container(
         padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
         decoration: BoxDecoration(
-          color: AppTheme.primaryColor.withOpacity(0.3),
+          color: AppTheme.primaryColor.withValues(alpha: 0.3),
           borderRadius: BorderRadius.circular(10)),
         child: Text('${entry.weight} kg',
             style: const TextStyle(color: Colors.white, fontSize: 11, fontWeight: FontWeight.bold)),
@@ -352,7 +352,7 @@ class _MiniTag extends StatelessWidget {
   Widget build(BuildContext context) => Container(
     padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
     decoration: BoxDecoration(
-      color: color.withOpacity(0.1),
+      color: color.withValues(alpha: 0.1),
       borderRadius: BorderRadius.circular(6)),
     child: Text(text, style: TextStyle(color: color, fontSize: 10, fontWeight: FontWeight.w600)),
   );
@@ -410,7 +410,7 @@ class _WeightChart extends StatelessWidget {
         belowBarData: BarAreaData(
           show: true,
           gradient: LinearGradient(
-            colors: [AppTheme.primaryColor.withOpacity(0.3), AppTheme.primaryColor.withOpacity(0.0)],
+            colors: [AppTheme.primaryColor.withValues(alpha: 0.3), AppTheme.primaryColor.withValues(alpha: 0.0)],
             begin: Alignment.topCenter, end: Alignment.bottomCenter,
           ),
         ),
@@ -428,9 +428,9 @@ class _SummaryCard extends StatelessWidget {
     child: Container(
       padding: const EdgeInsets.symmetric(vertical: 12),
       decoration: BoxDecoration(
-        color: color.withOpacity(0.08),
+        color: color.withValues(alpha: 0.08),
         borderRadius: BorderRadius.circular(14),
-        border: Border.all(color: color.withOpacity(0.2))),
+        border: Border.all(color: color.withValues(alpha: 0.2))),
       child: Column(children: [
         Text(value, style: TextStyle(fontWeight: FontWeight.bold, color: color, fontSize: 16)),
         const SizedBox(height: 2),
@@ -621,7 +621,7 @@ class _MeasurementChart extends StatelessWidget {
         dotData: FlDotData(getDotPainter: (_, __, ___, ____) =>
             FlDotCirclePainter(radius: 4, color: color, strokeWidth: 2, strokeColor: Colors.white)),
         belowBarData: BarAreaData(show: true,
-            gradient: LinearGradient(colors: [color.withOpacity(0.25), color.withOpacity(0)],
+            gradient: LinearGradient(colors: [color.withValues(alpha: 0.25), color.withValues(alpha: 0)],
                 begin: Alignment.topCenter, end: Alignment.bottomCenter)),
       )],
     ));
@@ -634,7 +634,7 @@ class _MeasBadge extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Container(
     padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-    decoration: BoxDecoration(color: color.withOpacity(0.1), borderRadius: BorderRadius.circular(20)),
+    decoration: BoxDecoration(color: color.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(20)),
     child: Text('$label: ${value.toStringAsFixed(1)} cm',
         style: TextStyle(color: color, fontSize: 12, fontWeight: FontWeight.w600)),
   );
@@ -672,7 +672,7 @@ class _CaloriesTab extends StatelessWidget {
       children: [
         if (goal != null) ...[
           Card(
-            color: AppTheme.primaryColor.withOpacity(0.05),
+            color: AppTheme.primaryColor.withValues(alpha: 0.05),
             child: Padding(
               padding: const EdgeInsets.all(16),
               child: Row(children: [
@@ -737,7 +737,7 @@ class _CaloriesTab extends StatelessWidget {
                   getDrawingHorizontalLine: (_) => FlLine(color: Colors.grey.shade200, strokeWidth: 1)),
               borderData: FlBorderData(show: false),
               extraLinesData: goal != null ? ExtraLinesData(horizontalLines: [
-                HorizontalLine(y: goal.toDouble(), color: Colors.green.withOpacity(0.6),
+                HorizontalLine(y: goal.toDouble(), color: Colors.green.withValues(alpha: 0.6),
                     strokeWidth: 1.5, dashArray: [6, 4],
                     label: HorizontalLineLabel(
                       show: true,
