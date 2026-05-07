@@ -78,7 +78,7 @@ class _ImportTabState extends State<_ImportTab> {
         children: [
           // Prompt para IA
           Card(
-            color: AppTheme.primaryColor.withOpacity(0.05),
+            color: AppTheme.primaryColor.withValues(alpha: 0.05),
             child: Padding(
               padding: const EdgeInsets.all(16),
               child: Column(
@@ -151,7 +151,7 @@ class _ImportTabState extends State<_ImportTab> {
             Container(
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
-                  color: Colors.red.withOpacity(0.1),
+                  color: Colors.red.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(8)),
               child: Text(_error!,
                   style: const TextStyle(color: Colors.red, fontSize: 13)),
@@ -161,7 +161,7 @@ class _ImportTabState extends State<_ImportTab> {
             Container(
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
-                  color: Colors.green.withOpacity(0.1),
+                  color: Colors.green.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(8)),
               child: Text(_success!,
                   style: const TextStyle(color: Colors.green, fontSize: 13)),
