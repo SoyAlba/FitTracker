@@ -303,7 +303,7 @@ class _FoodResultCardState extends State<_FoodResultCard> {
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
                   decoration: BoxDecoration(
-                    color: Colors.orange.withOpacity(0.1),
+                    color: Colors.orange.withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child: Text('$cal kcal',
@@ -367,7 +367,7 @@ class _MacroBadge extends StatelessWidget {
         margin: const EdgeInsets.only(right: 6),
         padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
         decoration: BoxDecoration(
-            color: color.withOpacity(0.1), borderRadius: BorderRadius.circular(4)),
+            color: color.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(4)),
         child: Text('$label:${value}g',
             style: TextStyle(color: color, fontSize: 10, fontWeight: FontWeight.w600)),
       );
