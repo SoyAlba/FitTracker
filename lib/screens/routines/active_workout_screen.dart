@@ -77,8 +77,6 @@ class _ActiveWorkoutScreenState extends State<ActiveWorkoutScreen> {
     return '${m.toString().padLeft(2, '0')}:${s.toString().padLeft(2, '0')}';
   }
 
-  int get _completedSets => _allSets[_currentExerciseIdx].where((s) => s['completed'] == true).length;
-
   @override
   Widget build(BuildContext context) {
     final ex = _currentExercise;
@@ -96,7 +94,7 @@ class _ActiveWorkoutScreenState extends State<ActiveWorkoutScreen> {
             margin: const EdgeInsets.only(right: 12),
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
             decoration: BoxDecoration(
-              color: Colors.white.withOpacity(0.1),
+              color: Colors.white.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(20),
             ),
             child: Text('⏱ $_timeStr',
@@ -109,7 +107,7 @@ class _ActiveWorkoutScreenState extends State<ActiveWorkoutScreen> {
           // Progress bar
           LinearProgressIndicator(
             value: (_currentExerciseIdx + 1) / widget.routine.exercises.length,
-            backgroundColor: Colors.white.withOpacity(0.1),
+            backgroundColor: Colors.white.withValues(alpha: 0.1),
             valueColor: const AlwaysStoppedAnimation(AppTheme.primaryColor),
             minHeight: 3,
           ),
@@ -147,9 +145,9 @@ class _ActiveWorkoutScreenState extends State<ActiveWorkoutScreen> {
                     margin: const EdgeInsets.only(bottom: 16),
                     padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                     decoration: BoxDecoration(
-                      color: Colors.amber.withOpacity(0.15),
+                      color: Colors.amber.withValues(alpha: 0.15),
                       borderRadius: BorderRadius.circular(20),
-                      border: Border.all(color: Colors.amber.withOpacity(0.3)),
+                      border: Border.all(color: Colors.amber.withValues(alpha: 0.3)),
                     ),
                     child: Text(
                       '🏆 Última vez: ${ex.lastWeight!.toStringAsFixed(1)} kg · ${ex.lastLogged}',
@@ -188,7 +186,7 @@ class _ActiveWorkoutScreenState extends State<ActiveWorkoutScreen> {
                   Container(
                     padding: const EdgeInsets.all(12),
                     decoration: BoxDecoration(
-                      color: Colors.white.withOpacity(0.05),
+                      color: Colors.white.withValues(alpha: 0.05),
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: Row(
@@ -330,7 +328,7 @@ class _ExerciseImage extends StatelessWidget {
     return Container(
       height: 140,
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.05),
+        color: Colors.white.withValues(alpha: 0.05),
         borderRadius: BorderRadius.circular(16),
       ),
       child: Column(
@@ -363,7 +361,7 @@ class _SetsTable extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.05),
+        color: Colors.white.withValues(alpha: 0.05),
         borderRadius: BorderRadius.circular(16),
       ),
       child: Column(
@@ -413,7 +411,7 @@ class _SetRow extends StatelessWidget {
   Widget build(BuildContext context) {
     final completed = setData['completed'] as bool;
     return Container(
-      color: completed ? Colors.green.withOpacity(0.08) : Colors.transparent,
+      color: completed ? Colors.green.withValues(alpha: 0.08) : Colors.transparent,
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       child: Row(
         children: [
@@ -602,7 +600,7 @@ class _StepBtn extends StatelessWidget {
         child: Container(
           width: 24, height: 24,
           decoration: BoxDecoration(
-            color: completed ? Colors.green.withOpacity(0.2) : Colors.white.withOpacity(0.08),
+            color: completed ? Colors.green.withValues(alpha: 0.2) : Colors.white.withValues(alpha: 0.08),
             borderRadius: BorderRadius.circular(6),
           ),
           child: Icon(icon, size: 14, color: onTap == null ? Colors.white24 : Colors.white70),
@@ -645,8 +643,8 @@ class _ExercisePills extends StatelessWidget {
                   color: active
                       ? AppTheme.primaryColor
                       : done
-                          ? Colors.green.withOpacity(0.2)
-                          : Colors.white.withOpacity(0.08),
+                          ? Colors.green.withValues(alpha: 0.2)
+                          : Colors.white.withValues(alpha: 0.08),
                   borderRadius: BorderRadius.circular(20),
                   border: Border.all(
                       color: active ? AppTheme.primaryColor : Colors.transparent),
@@ -678,7 +676,7 @@ class _RestTimerBar extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.05),
+        color: Colors.white.withValues(alpha: 0.05),
         borderRadius: BorderRadius.circular(12),
       ),
       child: isActive
@@ -719,7 +717,7 @@ class _RestTimerBar extends StatelessWidget {
                     child: Container(
                       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                       decoration: BoxDecoration(
-                        color: Colors.white.withOpacity(0.08),
+                        color: Colors.white.withValues(alpha: 0.08),
                         borderRadius: BorderRadius.circular(20),
                         border: Border.all(color: Colors.white24),
                       ),
