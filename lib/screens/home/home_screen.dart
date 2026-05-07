@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../providers/app_provider.dart';
 import '../../utils/app_theme.dart';
-import '../progress/progress_screen.dart';
 
 const _dayNames = ['', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
 
@@ -248,7 +247,7 @@ class _CalorieGoalCard extends StatelessWidget {
 
     if (kcalGoal == null) {
       return Card(
-        color: AppTheme.primaryColor.withOpacity(0.05),
+        color: AppTheme.primaryColor.withValues(alpha: 0.05),
         child: ListTile(
           leading: const Text('🎯', style: TextStyle(fontSize: 24)),
           title: const Text('Configura tu objetivo calórico',
@@ -291,7 +290,7 @@ class _CalorieGoalCard extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
                 decoration: BoxDecoration(
-                    color: AppTheme.primaryColor.withOpacity(0.1),
+                    color: AppTheme.primaryColor.withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(6)),
                 child: const Text('manual', style: TextStyle(fontSize: 10, color: AppTheme.primaryColor)),
               ),
@@ -305,7 +304,7 @@ class _CalorieGoalCard extends StatelessWidget {
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
               decoration: BoxDecoration(
-                color: isOver ? Colors.red.withOpacity(0.1) : Colors.green.withOpacity(0.1),
+                color: isOver ? Colors.red.withValues(alpha: 0.1) : Colors.green.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Text(
@@ -421,9 +420,9 @@ class _StatCard extends StatelessWidget {
     child: Container(
       padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 10),
       decoration: BoxDecoration(
-        color: color.withOpacity(0.07),
+        color: color.withValues(alpha: 0.07),
         borderRadius: BorderRadius.circular(14),
-        border: Border.all(color: color.withOpacity(0.15)),
+        border: Border.all(color: color.withValues(alpha: 0.15)),
       ),
       child: Column(children: [
         Text(icon, style: const TextStyle(fontSize: 20)),
